@@ -45,12 +45,6 @@ static UA_Server *create_server(void) {
     /* move config into the server */
     UA_Server *server = UA_Server_newWithConfig(&config);
 
-    /* config should no longer be used;
-     * if it was a stack variable, it would be destroyed on return;
-     * the following assignment should have no effect;
-     * however, it causes a crash in v1.4.16 */
-    config.secureChannelPKI.logging = (UA_Logger *)1;
-
     return server;
 }
 
