@@ -18,6 +18,9 @@ const UA_ByteString *const trustList = NULL;
 const size_t revocationListSize = 0;
 const UA_ByteString *const revocationList = NULL;
 
+void setBufPos(void);
+void setBufPos(void) {}
+
 static void initialize_server_config(UA_ServerConfig *config) {
     const UA_ByteString certificate = {CERT_DER_LENGTH, CERT_DER_DATA};
     const UA_ByteString privateKey = {KEY_DER_LENGTH, KEY_DER_DATA};
